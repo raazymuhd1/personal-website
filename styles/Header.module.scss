@@ -1,0 +1,33 @@
+$col: lightgreen;
+$pad: 10px;
+
+@mixin combineStyle($padd, $bgc) {
+    background-color: $bgc;
+    padding: $padd;
+}
+
+.container {
+    @include combineStyle(10px, orange);
+
+    .name {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: 16px;
+    }
+}
+
+.header {
+    margin: 20px;
+
+    & button {
+        padding: 10px;
+        border: none;
+        background-image: radial-gradient(40% 30%, blueviolet, red);
+        color: white;
+        border-radius: 10px;
+        cursor: pointer;
+
+        &:hover {
+            opacity: .7;
+        }
+    }
+}
