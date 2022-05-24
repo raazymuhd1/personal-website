@@ -2,7 +2,7 @@ import styles from '../../styles/Projects.module.scss';
 import Link from "next/link"
 import Image from "next/image"
 
-import { projectInfo, projectStack } from "./projectData"
+import { projectInfo, projectStack } from "./ProjectData"
 
 const Projects = () => {
 
