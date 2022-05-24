@@ -1,4 +1,5 @@
 import styles from '../../styles/Projects.module.scss';
+import Link from "next/link"
 import Image from "next/image"
 
 import { projectInfo, projectStack } from "./projectData"
@@ -17,11 +18,14 @@ const Projects = () => {
                  <div key={info.id} className={styles.project_detailsInfo}>
                     <div key={info.id} className={styles.info_source}>
                         <span className={styles.source_code}> 
-                           <a href={info.sourceLink}> { info.sourceName }
-                           </a> 
+                           <Link href={info.sourceLink} target="_blank" rel="noreferrer">
+                              <a target="_blank">{ info.sourceName }</a>
+                           </Link> 
                         </span>
                         <span className={styles.source_live}> 
-                           <a href={info.liveLink}> { info.liveName } </a> 
+                           <Link href={info.liveLink} passHref>
+                              <a target="_blank"> { info.liveName } </a> 
+                           </Link>
                         </span>
                     </div>
                     <Image src={info.img} className={styles.info_img} alt="project image" />

@@ -1,5 +1,7 @@
 import React from 'react'
 import styles from "./Footer.module.scss"
+import Link from "next/link"
+
 import { footerData } from "./footerData.js"
 
 const Footer = () => {
@@ -7,9 +9,11 @@ const Footer = () => {
     <div className={styles.footer}>
         <div className={styles.footer_left}>
             { footerData.map(data => (
-              <a key={data.id} className={styles.footer_leftIcons} target="_blank" href={data.link} rel="noreferrer" >
-                <data.Icon />
-              </a>
+              <Link href={data.link} key={data.id} passHref>
+                  <a className={styles.footer_leftIcons} target="_blank">
+                    <data.Icon />
+                  </a>
+              </Link>
             )) }
         </div>
         <div className={styles.footer_center}>
