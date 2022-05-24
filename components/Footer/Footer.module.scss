@@ -4,7 +4,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 100px;
+    margin-top: 5rem;
+    height: 120px;
 
     @include responsive.md {
         flex-wrap: wrap;

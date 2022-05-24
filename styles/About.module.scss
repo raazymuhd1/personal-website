@@ -31,6 +31,10 @@
         margin-bottom: 20rem;        
     }
 
+    @include responsive.sm {
+        height: 400px;
+    }
+
     // about left layout
     & .about_left {
         display: flex;
