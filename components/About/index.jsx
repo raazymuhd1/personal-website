@@ -24,10 +24,10 @@ const About = () => {
            </div>
         </div>
         <div className={styles.about_right}>
-           <Image 
-              src={profile}
-              className={styles.about_rightImg} 
-              alt="profile image" />
+            <Image 
+                src={profile} 
+                alt="profile image"
+                />
         </div>
     </div>
   )

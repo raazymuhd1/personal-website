@@ -77,10 +77,10 @@
     // about right layout
     & .about_right {
 
-        
-        & .about_rightImg {
-            height: 50px;
-            width: 50px ;
+    
+        & img {
+            height: 400px !important;
+            width: 400px  !important;
             border-top-right-radius: 18px;
             border-bottom-left-radius: 18px;
             outline-offset: 10px;
@@ -88,8 +88,8 @@
             outline-width: medium;
 
             @include responsive.md {
-                height: 200px;
-                width: 200px;
+                height: 300px !important;
+                width: 300px !important;
             }
         }
     }
