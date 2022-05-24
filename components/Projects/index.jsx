@@ -1,7 +1,7 @@
 import styles from '../../styles/Projects.module.scss';
 import Image from "next/image"
 
-import { projectInfo, projectStack } from "./projectData.js"
+import { projectInfo, projectStack } from "./projectData"
 
 const Projects = () => {
 

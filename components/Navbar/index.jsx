@@ -15,6 +15,10 @@ const Navbar = () => {
             scrollHeight.offsetTop < 200 ? setChangeBg(false) : setChangeBg(true)
             
         })
+
+        // return () => {
+        //     window.removeEventListener("scroll", )
+        // }
     }, [changeBg, navRef])
 
   return (
