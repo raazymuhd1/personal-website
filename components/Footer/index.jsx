@@ -7,7 +7,7 @@ const Footer = () => {
     <div className={styles.footer}>
         <div className={styles.footer_left}>
             { footerData.map(data => (
-              <a key={data.id} className={styles.footer_leftIcons} href={data.link} rel="noreferrer" >
+              <a key={data.id} className={styles.footer_leftIcons} target="_blank" href={data.link} rel="noreferrer" >
                 <data.Icon />
               </a>
             )) }
