@@ -6,9 +6,9 @@ const Info = () => {
     <div className={styles.info}>
         <div className={styles.info_left}>
             <div className={styles.info_leftIcons}>
-                { infoData.map(info => (
-                   <a key={info.id} href={info.link} target="_blank" rel='noreferrer'>
-                      <info.icon className={info.className} />
+                { infoData.map(({id, link, Icon, classes}) => (
+                   <a key={id} href={link} target="_blank" rel='noreferrer'>
+                      <Icon className={styles.classes} />
                    </a>
                 )) }
             </div>

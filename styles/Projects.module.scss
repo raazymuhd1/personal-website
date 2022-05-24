@@ -9,18 +9,18 @@
     z-index: 2;
 
     @include responsive.sm {
-        margin-top: calc(map.get(space.$spaces, margin, top) + 18rem) !important;
+        margin-top: calc(map.get(space.$spaces, margin, top) + 7rem) !important;
     }
 
     @include responsive.md {
-        margin-top: calc(map.get(space.$spaces, margin, top) + 10rem) !important;
+        margin-top: calc(map.get(space.$spaces, margin, top) + 28rem) !important;
     }
 
     @include responsive.lg {
-        margin-top: calc(map.get(space.$spaces, margin, top) + 4rem);
+        margin-top: calc(map.get(space.$spaces, margin, top) + 24rem);
     }
 
-
+    
     & .project_title {
         width: 240px;
         border-bottom: thick solid map.get(color.$colors, secondary);
@@ -55,6 +55,14 @@
                   border-radius: 20px;
                   @include responsive.sm {
                     height: 400px !important;
+                    width: 300px !important;
+                }
+
+                  @include responsive.md {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content:space-between;
+                    height: 300px !important;
                     width: 300px !important;
                 }
 

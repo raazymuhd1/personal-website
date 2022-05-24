@@ -19,17 +19,16 @@
     justify-content: space-between;
     align-items: center;
     color: map-get(color.$colors, primary);
-    padding: map.get(space.$spaces, 'padding', 'all');
-    height: 50px;
+    padding: calc(map.get(space.$spaces, 'padding', 'all') - .2rem);
+    min-height: 50px;
     // responsive navbar
 
-    @include responsive.md {
-        // flex-direction: column;
-        // padding-bottom: 1rem;
-        height: 150px;
+    @include responsive.lg {
+        min-height: 140px;
     }
     
     @include responsive.xl {
+        min-height: 100px;
         flex-direction: column;
     }
 
@@ -51,17 +50,15 @@
         align-items: center;
         gap: 0 5px;
         @include responsive.xsm {
-            margin-top: 10px;
-            justify-items: center;
+            margin-top: 20px;
             gap: 10px;
-            grid-template-columns: repeat(3, 140px);
         }
 
         @include responsive.md {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            margin-top: 15px;
+            grid-template-columns: repeat(3, 100px);
             justify-items: center;
-            gap: 10px 10px;
+            gap: 20px;
         }
 
         // nav link items
@@ -92,6 +89,7 @@
         & .nav_linkItem:nth-child(5) {
             border: 2px solid map.get(color.$colors, secondary);
             padding: 5px 8px;
+            min-width: 100px;
             text-align: center;
             cursor: pointer;
         }

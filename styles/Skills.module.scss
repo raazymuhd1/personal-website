@@ -5,7 +5,7 @@
 @use '../partials/responsive' as responsive;
 
 .skills {
-    margin-top: calc(map.get(space.$spaces, margin, top)  + 13rem);
+    margin-top: calc(map.get(space.$spaces, margin, top)  + 10rem);
     height: 500px;
 
     @include responsive.sm {
@@ -19,7 +19,12 @@
     
     @include responsive.lg {
         height: 300px;
-        margin-bottom: calc(map.get(space.$spaces, margin, bottom) + 14rem) !important;
+        margin-top: calc(map.get(space.$spaces, margin, bottom) + 23rem) !important;
+        margin-bottom: calc(map.get(space.$spaces, margin, bottom) + 10rem) !important;
+    }
+
+    @include responsive.xl {
+
     }
 
     & .skills_Name {

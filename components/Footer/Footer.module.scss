@@ -1,0 +1,35 @@
+@use "../../partials/responsive" as responsive;
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+
+    @include responsive.md {
+        flex-wrap: wrap;
+    }
+    
+    .footer_left {
+        display: flex;
+        width: 100px;
+    justify-content: space-between;
+
+    & .footer_leftIcons {
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    transition: transform 500ms ease-in-out;
+    }
+
+    & .footer_leftIcons:hover {
+    transform: scale(1.2);
+    }
+
+}
+    .footer_center > h4, .footer_right > h4 {
+    color: white;
+    font-weight: 500;
+}
+
+}
