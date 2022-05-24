@@ -1,0 +1,90 @@
+@use 'sass:map';
+@use '../partials/colors' as color;
+@use '../partials/fonts' as font;
+@use '../partials/space' as space;
+@use '../partials/radius' as radius;
+@use '../partials/responsive' as responsive;
+
+
+.contact {
+    margin-top: calc(map.get(space.$spaces, margin, top) + 11rem);
+    
+    & .contact_title {
+        font-size: map-get(font.$fontSize, xl);
+        border-bottom: thick solid map.get(color.$colors, secondary);
+        width: 210px;
+        color: map.get(color.$colors, primary);
+    }
+    
+    & .contact_details {
+        margin: 2rem auto;
+        border-top-right-radius: radius.$simpleRounded;
+        border-bottom-left-radius: radius.$simpleRounded;
+        background-color: map.get(color.$colors, primary);
+        backdrop-filter: blur(10px) saturate(100%) ; 
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        height: 400px;
+        @include responsive.md {
+            width: 100% !important;
+        }
+        @include responsive.lg {
+            width: 80%;
+        }
+
+        & .contact_detailsInput {
+             display: flex;
+             width: 90%;
+             align-items: center;
+             justify-content: space-around;
+
+            & label {
+                // font-size: map.get(font.$fontSize, medium);
+                font-weight: 600;
+                font-size: 3vmin;
+            }
+
+            & input, textarea {
+               padding: map.get(space.$spaces, padding, all);
+               width: 300px;
+               outline: none; 
+               background-image: color.$bodyBgColor;
+               color: map.get(color.$colors, primary); 
+               border-top-right-radius: radius.$simpleRounded;
+               border-bottom-left-radius: radius.$simpleRounded;
+            }
+
+            & textarea {
+                height: 50px;
+            }
+
+            & input::placeholder, textarea::placeholder {
+                color: map.get(color.$colors, info);
+            }
+        }
+
+        & .contact_detailsButton {
+            padding: .5rem map.get(space.$spaces, padding, all);
+            width: 200px;
+            align-self: flex-end;
+            cursor: pointer;
+            margin-right: 10px;
+            border-top-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+            border: none;
+            background-image: color.$bodyBgColor;
+            color: map.get(color.$colors, primary);
+            font-weight: map.get(font.$fontWeight, semibold);
+            transition: opacity 300ms ease-in-out;
+        }
+
+        & .contact_detailsButton:hover {
+            opacity: .9;
+        } 
+        
+}
+
+}

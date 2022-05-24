@@ -1,0 +1,37 @@
+@use 'sass:map';
+
+$responsive: (
+    xsm: 401px,
+    sm: 628px,
+    md: 728px,
+    lg: 980px,
+    xl: 1240px
+);
+
+
+
+@mixin xsm {
+    @media screen and (max-width: map.get($responsive, xsm)) {
+         @content;
+    }
+}
+@mixin sm {
+    @media screen and (max-width: map.get($responsive, sm)) {
+         @content;
+    }
+}
+@mixin md {
+    @media screen and (max-width: map.get($responsive, md)) {
+         @content;
+    }
+}
+@mixin lg {
+    @media screen and (max-width: map.get($responsive, lg)) {
+         @content;
+    }
+}
+@mixin xl {
+    @media screen and (max-width: map.get($responsive, xl)) {
+         @content;
+    }
+}

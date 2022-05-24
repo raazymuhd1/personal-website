@@ -1,0 +1,96 @@
+@use 'sass:map';
+@use '../partials/colors' as color;
+@use '../partials/fonts' as font;
+@use '../partials/space' as space;
+@use '../partials/responsive' as responsive;
+
+.project {
+    margin-top: calc(map.get(space.$spaces, margin, top) + 4rem);
+    z-index: 2;
+
+    @include responsive.sm {
+        margin-top: calc(map.get(space.$spaces, margin, top) + 18rem) !important;
+    }
+
+    @include responsive.md {
+        margin-top: calc(map.get(space.$spaces, margin, top) + 10rem) !important;
+    }
+
+    @include responsive.lg {
+        margin-top: calc(map.get(space.$spaces, margin, top) + 4rem);
+    }
+
+
+    & .project_title {
+        width: 240px;
+        border-bottom: thick solid map.get(color.$colors, secondary);
+        color: map.get(color.$colors, primary);
+
+        & h2 {
+            width: 100%;
+            font-size: map-get(font.$fontSize, xl);
+        }
+    }
+    
+    & .project_contents {
+
+
+        & .project_details {
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: center;
+            //   @include responsive.md {
+            //     display: flex !important;
+            //   }
+              
+              & .project_detailsInfo {
+                  min-height: 350px;
+                  width: 350px;
+                  @include color.semiDark;
+                  backdrop-filter: blur(100px) contrast(160%);
+                  padding: calc(map.get(space.$spaces, padding, all) + .5rem);
+                  margin: calc(map.get(space.$spaces, margin, top) + .5rem) map.get(space.$spaces, margin, top) 0 map.get(space.$spaces, margin, top);
+                  transition: transform 1s ease-in-out;
+                  cursor: pointer;
+                  border-radius: 20px;
+                  @include responsive.sm {
+                    height: 400px !important;
+                    width: 300px !important;
+                }
+
+                @include responsive.lg {
+                    width: 350px;
+                    height: 250px;
+                }
+
+                 
+                & .info_source {
+                    display: flex;
+                    justify-content: space-between;
+                    padding-bottom: map.get(space.$spaces, padding, bottom);
+
+                    & .source_code a, .source_live a {
+                       color: black;
+                       font-weight: map.get(font.$fontWeight, semibold);
+                       text-decoration: none;
+                    }
+                }
+                
+                & .info_img {
+                    width: 100%;
+                    height: 70%;
+                    padding-bottom: map.get(space.$spaces, padding, bottom);
+
+                }
+
+                & .info_stack {
+                    display: flex;
+                    width: 100%;
+                    justify-content: space-around;
+                    padding-top: calc(map.get(space.$spaces, padding, top) + 1rem);
+                }
+            }
+            
+        }
+    }
+}

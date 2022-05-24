@@ -1,0 +1,104 @@
+@use '../partials/colors' as color;
+@use '../partials/fonts' as font;
+@use '../partials/_space.scss' as space;
+@use '../partials/responsive' as responsive;
+@use 'sass:map';
+
+.changeBg {
+    background-image: color.$bodyBgColor ;
+    // padding-right: 1rem;
+    transition: all 500ms ease-in-out;
+}
+
+// navbar layout
+.navbar {
+    display: flex;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    justify-content: space-between;
+    align-items: center;
+    color: map-get(color.$colors, primary);
+    padding: map.get(space.$spaces, 'padding', 'all');
+    height: 50px;
+    // responsive navbar
+
+    @include responsive.md {
+        // flex-direction: column;
+        // padding-bottom: 1rem;
+        height: 150px;
+    }
+    
+    @include responsive.xl {
+        flex-direction: column;
+    }
+
+    // nav logo
+    & .nav_logo {
+        padding-left: 1.5rem;
+
+        & .nav_logoDot {
+            color: map.get(color.$colors, secondary);
+            font-size: map.get(font.$fontSize, 'xl');
+            font-weight: map.get(font.$fontWeight, 'extraBold');
+        }
+    }
+
+    // nav links
+    & .nav_link {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        align-items: center;
+        gap: 0 5px;
+        @include responsive.xsm {
+            margin-top: 10px;
+            justify-items: center;
+            gap: 10px;
+            grid-template-columns: repeat(3, 140px);
+        }
+
+        @include responsive.md {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            justify-items: center;
+            gap: 10px 10px;
+        }
+
+        // nav link items
+        & .nav_linkItem {
+            list-style: none;
+
+            & a {
+                text-decoration: none;
+                color: map.get(color.$colors, primary);
+                transition: text-decoration-line 2s ease-in-out;
+                margin-top: map.get(space.$spaces, 'margin', 'bottom');
+                // padding: map.get(space.$spaces, 'padding', 'all');
+            }
+
+            // nav link hover
+            & a:hover{
+                border-bottom: thick solid map.get(color.$colors, secondary);
+            }
+
+        }
+
+        // nav link items of 3
+        & .nav_linkItem:nth-child(3) {
+            margin-right: 40px;
+        }
+
+         // nav link items of 5
+        & .nav_linkItem:nth-child(5) {
+            border: 2px solid map.get(color.$colors, secondary);
+            padding: 5px 8px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        & .nav_linkItem:nth-child(5):hover {
+            border-bottom: none;
+            background-color: map.get(color.$colors, secondary);
+        }
+    }
+}

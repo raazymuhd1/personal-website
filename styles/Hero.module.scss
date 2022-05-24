@@ -1,0 +1,103 @@
+@use 'sass:map';
+@use '../partials/fonts' as font;
+@use '../partials/colors' as color;
+@use '../partials/space' as space;
+@use '../partials/responsive' as responsive;
+
+.hero {
+    display: flex;
+    width: 60%;
+    margin: 0 auto;
+    flex-direction: column;
+    max-height: 1000px;
+    height: 550px;
+    padding-top: 8rem;
+    z-index: 999;
+    color: map-get(color.$colors, primary);
+    
+
+    @include responsive.md {
+        width: 90%;
+    } 
+
+    & .hero_titleOne {
+        font-size: map-get(font.$fontSize, small);
+        color: map-get(color.$colors, secondary);
+    }
+    
+    & .hero_titleTwo {
+        font-size: 5vmin ;
+        // font-size: map-get(font.$fontSize, xl);
+        font-weight: map-get(font.$fontWeight, semibold);
+    }
+
+    & .hero_titleThree {
+        color: map-get(color.$colors, info);
+        font-size: 3vmin;
+        font-weight: 500;
+        margin-bottom: map-get(space.$spaces, margin, bottom);
+        // word-wrap: break-word;
+        @include responsive.lg {
+            margin-top: calc(map.get(space.$spaces, margin, top) - .5rem);
+        }
+    }
+    
+    & .hero_desc {
+        color: map-get(color.$colors, info2);
+        margin-bottom: calc(map-get(space.$spaces, margin, bottom) + 2.5rem );
+    }
+
+    & .hero_actionButton {
+        background-color: map-get(color.$colors, secondary);
+        width: 150px;
+        padding:calc(map-get(space.$spaces, padding, all) - 0.3rem );
+        border-radius: 1rem;
+        display: grid;
+        grid-template-columns: repeat(2, 100px);
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: calc(map-get(space.$spaces, margin, bottom) + 2rem);
+        
+        & button {
+            cursor: pointer;
+            background-color: inherit;
+            border: none;
+            outline: none;
+            font-size: calc(map-get(font.$fontSize, medium) - 3px);
+            color: map-get(color.$colors, primary);
+            text-shadow: 2px 2px 4px black ;
+        }
+
+        & .hero_actionButtonIcon {
+            font-size: calc(map-get(font.$fontSize, extraSmall) + 5px);
+            margin-left: 1rem;
+            cursor: pointer;
+        }
+    }
+
+    & .hero_scrollDown {
+        display: flex;
+        width: 180px;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        
+        & .hero_scrollDownIcon1, .hero_scrollDownIcon2 {
+            font-size: calc(map-get(font.$fontSize, extraSmall) + 5px);
+        }
+
+        & .hero_scrollDownIcon2 {
+            animation: moving 1s ease-in-out alternate-reverse infinite;
+            box-sizing: border-box;
+        }
+
+        @keyframes moving {
+            from {
+                transform: translateY(-5px);
+            }
+            to {
+                transform: translateY(5px);
+            }
+        }
+    }
+}

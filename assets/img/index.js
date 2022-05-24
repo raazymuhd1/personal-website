@@ -1,0 +1,5 @@
+export { default as crypto } from "./crypto.png"
+export { default as landingPage } from "./landing-page.png"
+export { default as photograph } from "./photograph.png"
+export { default as realEstate } from "./real-estate.png"
+export { default as profile } from "./profile.png"

@@ -1,0 +1,77 @@
+@use 'sass:map';
+@use '../partials/space' as space;
+@use '../partials/colors' as color;
+@use '../partials/fonts' as font;
+
+
+.info {
+    height: 250px;
+    width: 100%;
+    position: sticky;
+    bottom:.5rem;
+    z-index: 0;
+    left:.5rem;
+    right: .5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: map-get(color.$colors, primary);
+
+    & .info_left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: map-get(space.$spaces, padding, all);
+        
+        & .info_leftIcons {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            height: 100px;
+            font-size: map-get(font.$fontSize, large);
+            gap: 15px 0;
+            cursor: pointer;
+
+            & a {
+                color: white;
+            }
+
+            & .info_leftIcon_instagram, 
+              .info_leftIcon_linkedin, 
+              .info_leftIcon_github {
+                  transition: transform .5s ease-in-out;
+                  border-radius: 50%;
+                  padding: 3px;
+            } 
+            & .info_leftIcon_instagram:hover, 
+              .info_leftIcon_linkedin:hover, 
+              .info_leftIcon_github:hover {
+                transform: scale(1.2);
+                box-shadow: 2px 2px 3px white, -2px -2px 3px white;
+            } 
+        }
+        
+        & .info_leftLine {
+            transform: rotate(270deg) translateX(60px) ;
+            width: 150px;
+        }
+
+
+    }
+
+    & .info_right {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: map-get(space.$spaces, padding, all);
+        
+        & h4 {
+            writing-mode: vertical-lr;
+        }
+
+        & .info_rightLine {
+            transform: rotate(270deg) translateX(100px) translateY(-14px);
+            width: 150px;
+        }
+
+    }
+}

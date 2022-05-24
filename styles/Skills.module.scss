@@ -1,0 +1,180 @@
+@use 'sass:map';
+@use '../partials/colors' as color;
+@use '../partials/space' as space;
+@use '../partials/fonts' as font;
+@use '../partials/responsive' as responsive;
+
+.skills {
+    margin-top: calc(map.get(space.$spaces, margin, top)  + 13rem);
+    height: 500px;
+
+    @include responsive.sm {
+        min-height: 700px;
+        margin-bottom: calc(map.get(space.$spaces, margin, bottom) + 9rem) !important;
+    }
+    
+    @include responsive.md {
+        margin-bottom: calc(map.get(space.$spaces, margin, bottom) + 16rem) !important;
+    }
+    
+    @include responsive.lg {
+        height: 300px;
+        margin-bottom: calc(map.get(space.$spaces, margin, bottom) + 14rem) !important;
+    }
+
+    & .skills_Name {
+        border-bottom: thick solid map.get(color.$colors, secondary) ;
+        width: 100px;
+        color: map.get(color.$colors, primary);
+        font-size: map-get(font.$fontSize, xl);
+        margin-bottom: calc(map.get(space.$spaces, margin, bottom) + 2rem);
+ }
+
+ & .skills_contents {
+        height: 300px;
+        max-height: 350px;
+        margin: 0 auto;
+        // height: 250px;
+        color: map.get(color.$colors, primary);
+        display: flex;
+        justify-content: space-around;
+
+    // GENERAL STYLE
+    & .skills_left, .skills_center, .skills_right {
+        padding: 10px;
+    }
+    
+    & .skills_left .skills_leftTitle:hover, .skills_center .skills_centerTitle:hover, .skills_right .skills_rightTitle:hover  {
+        border-bottom: 2px solid map.get(color.$colors, secondary);
+        border-bottom-width: thick;
+    }
+
+
+    & .skills_left .skills_leftTitle, .skills_center .skills_centerTitle, .skills_right .skills_rightTitle  { 
+        margin-bottom: calc(map.get(space.$spaces, margin, bottom) + 1rem);
+        cursor: pointer;
+        width: 100px;
+        transition: border-bottom 200ms ease-in-out; 
+    }
+
+    & .skills_left .skills_leftInfo_details:hover, .skills_center .skills_centerInfo_details:hover, .skills_right .skills_rightInfo_details:hover  { 
+       transform: scale(1.2); 
+    }
+
+    & .skills_left .skills_leftInfo_details, .skills_center .skills_centerInfo_details, .skills_right .skills_rightInfo_details  { 
+        margin-bottom: calc(map.get(space.$spaces, margin, bottom) + 1rem);
+        cursor: pointer;
+        width: 100px;
+        transition: border-bottom 200ms ease-in-out, transform 200ms ease-in-out; 
+    }
+    
+    // skills left details
+    & .skills_left {
+         width: 400px;
+         height: 100%;
+         display: flex;
+         flex-direction: column;
+         @include responsive.lg {
+             flex: 3;
+         } 
+
+        & .skills_leftInfo {
+            display: grid;
+            grid-template-rows: repeat(2, 1fr);
+            grid-template-columns: repeat(4, 1fr);
+            gap:0 10px;
+            
+            & .skills_leftInfo_details {
+                display: flex;
+                margin-bottom: map-get(space.$spaces, margin, top);
+                flex-direction: column;
+                align-items: center;
+
+                & .skills_leftInfo_detailsIcons {
+                    font-size: calc(map-get(font.$fontSize, xl) + .5rem);
+                }
+        }
+
+    }
+
+    & .skills_leftNote {
+        margin-top: map.get(space.$spaces, margin, top);
+
+        & li {
+            list-style-image: linear-gradient(100deg, green, green);
+        }
+    }
+
+}
+    // skills center details
+    & .skills_center {
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        & .skills_centerTitle {
+            margin-bottom: calc(map.get(space.$spaces, margin, bottom) + 10px);
+        }
+
+        & .skills_centerInfo {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0 20px;
+
+
+            & .skills_centerInfo_details {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                & .skills_centerInfo_detailsIcon {
+                    font-size: calc(map-get(font.$fontSize, xl) + .5rem);
+                    // margin-left: map.get(space.$spaces, margin, right);
+                }
+            }
+        }
+    }
+
+
+    & .skills_right {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        & .skills_rightInfo {
+            display: grid;
+            grid-template-columns: repeat(2, .5fr);
+            gap: 0 10px;
+
+
+            & .skills_rightInfo_details {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                & .skills_rightInfo_detailsIcon {
+                    font-size: calc(map-get(font.$fontSize, xl) + .5rem);
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 728px) {
+    .skills_contents {
+        flex-wrap: wrap;
+        height: 400px;
+        padding-bottom: calc(map.get(space.$spaces, padding, bottom) + 4rem);
+    }
+}
+
+@media screen and (max-width: 928px) {
+    .skills_contents {
+        flex-wrap: wrap;
+        height: 400px;
+        padding-bottom: calc(map.get(space.$spaces, padding, bottom) + 6rem);
+    }
+}
+
+}

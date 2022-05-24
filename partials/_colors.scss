@@ -1,0 +1,15 @@
+@use 'sass:map';
+
+$bodyBgColor: radial-gradient(at 10% 30%, rgb(10, 9, 77), rgb(19, 10, 10));
+
+$colors: (
+    'primary': white,
+    'secondary': rgb(15, 213, 15),
+    'info': rgb(174, 171, 171),
+    'semiDark': rgb(45, 43, 43),
+);
+
+
+@mixin semiDark {
+    background-color: map.get($colors, primary);
+}

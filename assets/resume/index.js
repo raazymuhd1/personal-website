@@ -1,0 +1,1 @@
+export { default as resume } from "./my resume.pdf"

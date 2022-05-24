@@ -1,19 +1,19 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.scss'
-import Header from "../components/Header"
+// import '../styles/App.module.scss'
+import { About, Info, Hero, Navbar, Skills, Projects, Contact, Footer } from '../components'
 
-export default function Home() {
-      
+function App() {
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <meta name="description" content="using moralis" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-        <Header />
+    <div className="App">
+       <Navbar />
+       <Hero />
+       <About />
+       <Skills />
+       <Projects /> 
+       <Contact />
+       <Info />
+       <Footer />
     </div>
   )
 }
+
+export default App
