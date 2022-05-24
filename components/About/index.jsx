@@ -25,7 +25,7 @@ const About = () => {
         </div>
         <div className={styles.about_right}>
            <Image 
-              src={profile} width={400} height={400}
+              src={profile}
               className={styles.about_rightImg} 
               alt="profile image" />
         </div>

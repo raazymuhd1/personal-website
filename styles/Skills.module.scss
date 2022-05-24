@@ -9,8 +9,7 @@
     height: 500px;
 
     @include responsive.sm {
-        min-height: 700px;
-        margin-bottom: calc(map.get(space.$spaces, margin, bottom) + 9rem) !important;
+        min-height: 600px;
     }
     
     @include responsive.md {
