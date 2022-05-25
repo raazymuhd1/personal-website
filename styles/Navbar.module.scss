@@ -19,9 +19,14 @@
     justify-content: space-between;
     align-items: center;
     color: map-get(color.$colors, primary);
-    padding: calc(map.get(space.$spaces, 'padding', 'all') - .2rem);
+    padding: .5rem calc(map.get(space.$spaces, 'padding', 'all') - .5rem) .2rem ;
     min-height: 50px;
     // responsive navbar
+
+    @include responsive.md {
+        height: 120px !important;
+        justify-content: space-around
+    }
 
     @include responsive.lg {
         min-height: 140px;
@@ -56,8 +61,11 @@
 
         @include responsive.md {
             margin-top: 15px;
-            grid-template-columns: repeat(3, 100px);
-            justify-items: center;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            align-content: center;
             gap: 20px;
         }
 

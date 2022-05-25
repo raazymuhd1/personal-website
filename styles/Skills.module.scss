@@ -8,23 +8,21 @@
     margin-top: calc(map.get(space.$spaces, margin, top)  + 10rem);
     height: 500px;
 
-    @include responsive.xsm {
-        
-    }
-
     @include responsive.sm {
-        min-height: 600px;
+        height: 650px !important;
     }
     
     @include responsive.md {
-        margin-bottom: calc(map.get(space.$spaces, margin, bottom) + 16rem) !important;
+        // margin-bottom: calc(map.get(space.$spaces, margin, bottom) + 26rem) !important;
+        min-height: 350px !important;
     }
     
     @include responsive.lg {
-        height: 300px;
+        min-height: 300px;
         margin-top: calc(map.get(space.$spaces, margin, bottom) + 23rem) !important;
         margin-bottom: calc(map.get(space.$spaces, margin, bottom) + 10rem) !important;
     }
+
 
     & .skills_Name {
         border-bottom: thick solid map.get(color.$colors, secondary) ;
@@ -81,9 +79,13 @@
              flex: 3;
          } 
 
-         @include responsive.xsm {
-            overflow-x: scroll;
+         & .skills_leftTitle {
+             @include responsive.xsm {
+                // overflow-x: scroll;
+                margin-left: 4.5rem;
+             }
          }
+
 
         & .skills_leftInfo {
             display: grid;

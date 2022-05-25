@@ -8,13 +8,16 @@ const Footer = () => {
   return (
     <div className={styles.footer}>
         <div className={styles.footer_left}>
-            { footerData.map(data => (
-              <Link href={data.link} key={data.id} passHref>
-                  <a className={styles.footer_leftIcons} target="_blank">
-                    <data.Icon />
-                  </a>
-              </Link>
-            )) }
+            <p> Get In Touch </p>
+            <div className={styles.footer_leftSocial}>
+              { footerData.map(data => (
+                <Link href={data.link} key={data.id} passHref>
+                    <a className={styles.footer_leftIcons} target="_blank">
+                      <data.Icon />
+                    </a>
+                </Link>
+              )) }
+            </div>
         </div>
         <div className={styles.footer_center}>
            <h4> created by mohammedRaazy | 2022 </h4>

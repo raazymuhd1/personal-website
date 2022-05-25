@@ -18,25 +18,27 @@
 
     @include responsive.xsm {
         height: 300px;
+        padding-bottom: calc(map.get(space.$spaces, margin, bottom) + 10rem) !important;
     }
-
+    
     @include responsive.xl {
         margin-top:8rem !important;
     }
-
+    
     @include responsive.lg {
         grid-template-columns: 1fr;
         gap: 60px;
         height: 600px;
-        padding-bottom: calc(map.get(space.$spaces, margin, bottom) + 22rem);
+        padding-bottom: calc(map.get(space.$spaces, margin, bottom) + 18rem);
     }
     
     @include responsive.md {
-        margin-bottom: 20rem;        
+        padding-bottom: calc(map.get(space.$spaces, margin, bottom) + 10rem) !important;
+        margin-bottom: 10rem;        
     }
 
     @include responsive.sm {
-        min-height: 400px;
+        min-height: 300px;
     }
 
     // about left layout

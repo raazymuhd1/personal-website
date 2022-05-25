@@ -7,7 +7,7 @@
 
 
 .contact {
-    margin-top: calc(map.get(space.$spaces, margin, top) + 11rem);
+    margin-top: calc(map.get(space.$spaces, margin, top) + 7rem);
     
     & .contact_title {
         font-size: map-get(font.$fontSize, xl);
@@ -28,8 +28,14 @@
         align-items: center;
         justify-content: space-around;
         height: 400px;
+        @include responsive.xsm {
+            height: 280px;
+            width: 70%;
+        }
+
         @include responsive.md {
             width: 100% !important;
+            min-height: 300px;
         }
         @include responsive.lg {
             width: 80%;

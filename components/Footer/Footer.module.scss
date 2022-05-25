@@ -7,25 +7,43 @@
     margin-top: 5rem;
     height: 120px;
 
+    @include responsive.sm {
+        height: 150px !important;
+    }
+
     @include responsive.md {
         flex-wrap: wrap;
     }
     
     .footer_left {
         display: flex;
+        flex-direction: column;
         width: 100px;
-    justify-content: space-between;
+        height: 70px;
+        align-items: center;
+        justify-content: space-between;
 
-    & .footer_leftIcons {
-    text-decoration: none;
-    color: white;
-    font-size: 1.5rem;
-    transition: transform 500ms ease-in-out;
-    }
+        & p {
+            color: white;
+        }
 
-    & .footer_leftIcons:hover {
-    transform: scale(1.2);
-    }
+        & .footer_leftSocial {
+            display: flex;
+            gap: 10px;
+
+            & .footer_leftIcons {
+                text-decoration: none;
+                color: white;
+                font-size: 1.5rem;
+                transition: transform 500ms ease-in-out;
+            }
+
+            & .footer_leftIcons:hover {
+                transform: scale(1.2);
+            }
+        }
+
+
 
 }
     .footer_center > h4, .footer_right > h4 {

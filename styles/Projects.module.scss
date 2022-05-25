@@ -10,14 +10,15 @@
 
     @include responsive.sm {
         margin-top: calc(map.get(space.$spaces, margin, top) + 7rem) !important;
+        // height: 
     }
 
     @include responsive.md {
-        margin-top: calc(map.get(space.$spaces, margin, top) + 28rem) !important;
+        margin-top: calc(map.get(space.$spaces, margin, top) + 18rem) !important;
     }
 
     @include responsive.lg {
-        margin-top: calc(map.get(space.$spaces, margin, top) + 24rem);
+        margin-top: calc(map.get(space.$spaces, margin, top) + 14rem);
     }
 
     
@@ -53,8 +54,13 @@
                   transition: transform 1s ease-in-out;
                   cursor: pointer;
                   border-radius: 20px;
+                  @include responsive.xsm {
+                    height: 250px !important;
+                    width: 300px !important;
+                }
+
                   @include responsive.sm {
-                    height: 400px !important;
+                    min-height: 300px !important;
                     width: 300px !important;
                 }
 
@@ -62,7 +68,7 @@
                     display: flex;
                     flex-direction: column;
                     justify-content:space-between;
-                    height: 300px !important;
+                    min-height: 200px !important;
                     width: 300px !important;
                 }
 
