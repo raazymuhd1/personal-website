@@ -9,14 +9,14 @@ const Projects = () => {
   return (
     <div className={styles.project} id="project">
        <div className={styles.project_title}>
-          <h2> Latest Project </h2>
+          <h2> Some Project </h2>
        </div>
 
        <div className={styles.project_contents}>
           <div className={styles.project_details}>
               { projectInfo.map(info => (
                  <div key={info.id} className={styles.project_detailsInfo}>
-                    <div key={info.id} className={styles.info_source}>
+                    <div className={styles.info_source}>
                         <span className={styles.source_code}> 
                            <Link href={info.sourceLink} target="_blank" rel="noreferrer">
                               <a target="_blank">{ info.sourceName }</a>

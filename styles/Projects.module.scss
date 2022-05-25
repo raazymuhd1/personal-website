@@ -45,17 +45,16 @@
             //   }
               
               & .project_detailsInfo {
-                  min-height: 350px;
+                  min-height: 250px;
                   width: 350px;
-                  @include color.semiDark;
-                  backdrop-filter: blur(100px) contrast(160%);
+                  background-color: white;
                   padding: calc(map.get(space.$spaces, padding, all) + .5rem);
                   margin: calc(map.get(space.$spaces, margin, top) + .5rem) map.get(space.$spaces, margin, top) 0 map.get(space.$spaces, margin, top);
                   transition: transform 1s ease-in-out;
                   cursor: pointer;
                   border-radius: 20px;
                   @include responsive.xsm {
-                    height: 250px !important;
+                    height: 280px !important;
                     width: 300px !important;
                 }
 
@@ -74,7 +73,7 @@
 
                 @include responsive.lg {
                     width: 350px;
-                    height: 250px;
+                    min-height: 300px;
                 }
 
                  
