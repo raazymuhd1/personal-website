@@ -8,6 +8,10 @@
     margin-top: calc(map.get(space.$spaces, margin, top)  + 10rem);
     height: 500px;
 
+    @include responsive.xsm {
+        
+    }
+
     @include responsive.sm {
         min-height: 600px;
     }
@@ -22,10 +26,6 @@
         margin-bottom: calc(map.get(space.$spaces, margin, bottom) + 10rem) !important;
     }
 
-    @include responsive.xl {
-
-    }
-
     & .skills_Name {
         border-bottom: thick solid map.get(color.$colors, secondary) ;
         width: 100px;
@@ -38,7 +38,6 @@
         height: 300px;
         max-height: 350px;
         margin: 0 auto;
-        // height: 250px;
         color: map.get(color.$colors, primary);
         display: flex;
         justify-content: space-around;
@@ -81,6 +80,10 @@
          @include responsive.lg {
              flex: 3;
          } 
+
+         @include responsive.xsm {
+            overflow-x: scroll;
+         }
 
         & .skills_leftInfo {
             display: grid;
